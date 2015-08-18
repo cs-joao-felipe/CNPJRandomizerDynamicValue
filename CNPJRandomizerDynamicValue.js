@@ -1,9 +1,9 @@
 (function() {
-  var CNPJRandomizerDynamicValue;
+	var CNPJRandomizerDynamicValue;
 
-  CNPJRandomizerDynamicValue = function() {
-    this.evaluate = function(context) {
-      var n = 9;
+	CNPJRandomizerDynamicValue = function() {
+		this.evaluate = function(context) {
+			var n = 9;
 			var n1 = Math.round(Math.random()*n);
 			var n2 = Math.round(Math.random()*n);
 			var n3 = Math.round(Math.random()*n);
@@ -28,7 +28,7 @@
 			if (this.format === "no")
 				return ''+n1+n2+n3+n4+n5+n6+n7+n8+n9+n10+n11+n12+d1+d2;
 			else if (this.format === "yes")
-				return ''+n1+n2+'.'+n3+n4+n5+'.'+n6+n7+n8+'/'+n9+n10+n11+n12+'-'+d1+d2;;
+				return ''+n1+n2+'.'+n3+n4+n5+'.'+n6+n7+n8+'/'+n9+n10+n11+n12+'-'+d1+d2;
 			else
 				return ["Choose either `yes` or `no` to apply format"];
 		};
@@ -38,13 +38,11 @@
 	};
 
 	CNPJRandomizerDynamicValue.identifier = "br.com.concretesolutions.PawExtension.CNPJRandomizerDynamicValue";
+	CNPJRandomizerDynamicValue.title = "CNPJ Randomizer Dynamic Value";
+	CNPJRandomizerDynamicValue.inputs = [
+		DynamicValueInput("format", "Formatted", "String")
+	];
 
-  CNPJRandomizerDynamicValue.title = "CNPJ Randomizer Dynamic Value";
-
-  CNPJRandomizerDynamicValue.inputs = [  
-  DynamicValueInput("format", "Formatted", "String")
-  ];
-
-  registerDynamicValueClass(CNPJRandomizerDynamicValue);
+	registerDynamicValueClass(CNPJRandomizerDynamicValue);
 
 }).call(this);
